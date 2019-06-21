@@ -15,6 +15,7 @@ class TabLink {
     if (this.tabData === 'all') {
       // If `all` is true, select all cards regardless of their data attribute values
       this.cards = document.querySelectorAll(".card");
+
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
       this.cards = document.querySelectorAll(`.card[data-tab="${tabData}"]`);
@@ -38,7 +39,7 @@ class TabLink {
     //console.log(tabs)
 
     // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach(tab => tab.classList.remove(".active-tab"))
+    tabs.forEach(tab => tab.classList.remove("active-tab"))
     //console.log(tabs)
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll(".card");
@@ -48,11 +49,12 @@ class TabLink {
     //console.log(cards)
 
     // Add a class of ".active-tab" to this.tabElement
-    this.tabElement.classList.add(".active-tab");
-    //console.log(this.tabElement)
+    this.tabElement.classList.add("active-tab");
+    console.log(this.tabElement)
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. 
     //Just un-comment the code and study what is happening here.
     this.cards.forEach(card => card.selectCard());
+    //console.log(this.tabElement)
   }
 }
 
@@ -60,7 +62,7 @@ class TabCard {
   constructor(cardElement) {
     // Assign this.cardElement to the cardElement DOM reference
     this.cardElement = cardElement;
-    console.log(this.cardElement)
+    //console.log(this.cardElement)
   }
 
   selectCard() {
